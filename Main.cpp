@@ -1,18 +1,33 @@
 ﻿//////////////////////////////////////////////////
-// Q. 2941
+// Q. 2798
 #include <iostream>
 #include <vector>
-using std::cout, std::cin, std::string;
+using std::cout, std::cin;
 int main() {
-	std::vector<string> croaChars = { "c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z=" };
-	string s;
-	cin >> s;
-	int count = 0, length = 0, idx;
-	for (auto const& elem : croaChars) {
-		while ((idx = s.find(elem, 0)) != std::string::npos)
-		{
-			s.replace(s.begin() + idx, s.begin() + idx + elem.size(), "a");
-		}
+	int n = 0, m = 0;
+	cin >> n >> m;
+	int o = 0;
+	std::vector<int> cards;
+	for (int i = 0; i < n; i++)	{
+		cin >> o;
+		cards.push_back(o);
 	}
-	cout << s.length();
+	int sum2 = 0, sum3 = 0, max = 0;
+	for (int i = 0; i < n-2; i++) {
+		for (int j = i + 1; j < n - 1; j++) {
+			sum2 = cards[i] + cards[j];
+			if (sum2 > m) continue;
+			for (int k = j + 1; k < n; k++) {
+				sum3 = sum2 + cards[k];
+				if (sum3 > m) continue;
+				if (max < sum3) {
+					max = sum3;
+					if (max == m) break;
+				}
+			}
+			if (max == m) break;
+		}
+		if (max == m) break;
+	}
+	cout << max;
 }

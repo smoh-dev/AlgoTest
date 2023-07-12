@@ -3,23 +3,216 @@
 // Questions: https://www.acmicpc.net/problem/#####
 
 //////////////////////////////////////////////////
+// Q. 2798
+//#include <iostream>
+//#include <vector>
+//using std::cout, std::cin;
+//int main() {
+//	int n = 0, m = 0;
+//	cin >> n >> m;
+//	int o = 0;
+//	std::vector<int> cards;
+//	for (int i = 0; i < n; i++) {
+//		cin >> o;
+//		cards.push_back(o);
+//	}
+//	int sum2 = 0, sum3 = 0, max = 0;
+//	for (int i = 0; i < n - 2; i++) {
+//		for (int j = i + 1; j < n - 1; j++) {
+//			sum2 = cards[i] + cards[j];
+//			if (sum2 > m) continue;
+//			for (int k = j + 1; k < n; k++) {
+//				sum3 = sum2 + cards[k];
+//				if (sum3 > m) continue;
+//				if (max < sum3) {
+//					max = sum3;
+//					if (max == m) break;
+//				}
+//			}
+//			if (max == m) break;
+//		}
+//		if (max == m) break;
+//	}
+//	cout << max;
+//}
+
+//////////////////////////////////////////////////
+// Q. 24313
+//#include <iostream>
+//using std::cout, std::cin;
+//int main() {
+//	int a1 = 0, a0 = 0, c = 0, n0 = 0;
+//	cin >> a1 >> a0 >> c >> n0;
+//	bool result = (a1 * n0 + a0 <= c * n0) && (a1 <= c);
+//	cout << result;
+//}
+
+//////////////////////////////////////////////////
+// Q. 24267
+//#include <iostream>
+//using std::cout, std::cin;
+//int main() {
+//	long long n = 0;
+//	cin >> n;
+//	cout << n * (n - 1) * (n - 2) / 3 / 2 << "\n" << 3;
+//}
+
+//////////////////////////////////////////////////
+// Q. 24266
+//#include <iostream>
+//using std::cout, std::cin;
+//int main() {
+//	long long n = 0;
+//	cin >> n;
+//	cout << n * n * n << "\n" << 3;
+//}
+
+//////////////////////////////////////////////////
+// Q. 24265
+//#include <iostream>
+//using std::cout, std::cin;
+//int main() {
+//	long long n = 0;
+//	cin >> n;
+//	cout << ((n * (n - 1)) / 2) << "\n" << 2;
+//}
+
+//////////////////////////////////////////////////
+// Q. 24264
+//#include <iostream>
+//#include <cmath>
+//using std::cout, std::cin;
+//int main() {
+//	int n = 0;
+//	cin >> n;
+//	long long result = pow(n, 2);
+//	cout << result << "\n" << 2;
+//}
+
+//////////////////////////////////////////////////
+// Q. 24263
+//#include <iostream>
+//using std::cout, std::cin;
+//int main() {
+//	int n = 0;
+//	cin >> n;
+//	cout << n << "\n" << 1;
+//}
+
+//////////////////////////////////////////////////
+// Q. 24262
+//#include <iostream>
+//#include <cmath>
+//using std::cout, std::cin;
+//int main() {
+//	int n = 0;
+//	cin >> n;
+//	cout << 1 << "\n" << 0;
+//}
+
+//////////////////////////////////////////////////
+// Q. 25206
+//#include <iostream>
+//#include <vector>
+//#include <sstream>
+//using std::vector, std::string, std::stringstream;
+//vector<string> Split(string input, char delim) {
+//	vector<string> result;
+//	stringstream ss(input);
+//	string word;
+//	while (getline(ss, word, delim)) {
+//		result.push_back(word);
+//	}
+//	return result;
+//}
+//float GetGrade(string input) {
+//	if (input == "A+") return 4.5f;
+//	else if (input == "A0") return 4.0f;
+//	else if (input == "B+") return 3.5f;
+//	else if (input == "B0") return 3.0f;
+//	else if (input == "C+") return 2.5f;
+//	else if (input == "C0") return 2.0f;
+//	else if (input == "D+") return 1.5f;
+//	else if (input == "D0") return 1.0f;
+//	else if (input == "F") return 0.0f;
+//	else return -1.0f;
+//}
+//using std::cout, std::cin;
+//int main() {
+//	string input = "";
+//	vector<string> courseInfo; courseInfo.clear();
+//	float credit = 0.0f, totalCredit = 0.0f, grade = 0.0f, totalGrade = 0.0f;
+//	while (std::getline(cin, input)) {
+//		if (input == "") break;
+//		courseInfo = Split(input, ' ');
+//		grade = GetGrade(courseInfo[2]);
+//		if (grade >= 0.0f) {
+//			credit = std::stof(courseInfo[1]);
+//			totalCredit += credit;
+//			totalGrade += grade * credit;
+//		}
+//	}
+//	cout << float(totalGrade / totalCredit);
+//}
+
+//////////////////////////////////////////////////
+// Q. 1316
+//#include <iostream>
+//#include <vector>
+//#include <algorithm>
+//using std::cout, std::cin, std::string;
+//#include<vector>
+//int main() {
+//	int n = 0, result = 0;
+//	cin >> n;
+//	std::vector<char> chars;
+//	string word = "";
+//	char prevChar = 0;
+//	bool isSame = false;
+//	for (int i = 0; i < n; i++) {
+//		cin >> word;
+//		for (int j = 0; j < word.length(); j++) {
+//			if (prevChar != word[j]) {
+//				auto it = std::find(chars.begin(), chars.end(), word[j]);
+//				if (it == chars.end()) {
+//					prevChar = word[j];
+//					chars.push_back(word[j]);
+//				}
+//				else {
+//					isSame = true;
+//					break;
+//				}
+//			}
+//		}
+//		if (!isSame) {
+//			result++;
+//		}
+//		prevChar = 0;
+//		isSame = false;
+//		chars.clear();
+//	}
+//	cout << result;
+//}
+
+
+//////////////////////////////////////////////////
 // Q. 2941
-#include <iostream>
-#include <vector>
-using std::cout, std::cin, std::string;
-int main() {
-	std::vector<string> croaChars = { "c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z=" };
-	string s;
-	cin >> s;
-	int count = 0, length = 0, idx;
-	for (auto const& elem : croaChars) {
-		while ((idx = s.find(elem, 0)) != std::string::npos)
-		{
-			s.replace(s.begin() + idx, s.begin() + idx + elem.size(), "a");
-		}
-	}
-	cout << s.length();
-}
+//#include <iostream>
+//#include <vector>
+//using std::cout, std::cin, std::string;
+//int main() {
+//	std::vector<string> croaChars = { "c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z=" };
+//	string s;
+//	cin >> s;
+//	int count = 0, length = 0, idx;
+//	for (auto const& elem : croaChars) {
+//		while ((idx = s.find(elem, 0)) != std::string::npos)
+//		{
+//			s.replace(s.begin() + idx, s.begin() + idx + elem.size(), "a");
+//		}
+//	}
+//	cout << s.length();
+//}
 
 
 //////////////////////////////////////////////////
